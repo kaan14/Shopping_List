@@ -1,0 +1,41 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <img src="../public/assets/images/shopingcart.png" width="60">
+    <h1 class="display-4">Let Us Keep Your Shopping List For You</h1>
+    <p class="lead">Shopping never been this easy before</p>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Will Buy</h1>
+            <ul>
+                {{#each willBuy}}
+                <li>{{this}}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" {{bindAttr checked="isChecked" }}>
+                        <label class="form-check-label" for="defaultCheck1">
+
+                        </label>
+                </li>
+
+                {{/each}}
+                </div>
+                <div class="col-sm">
+                    <h1>Done</h1>
+                </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group col-md-6">
+                <label for="inputNewItem"><h2>Add New Item</h2></label>
+                <p>To enter new item, hit "Enter", </p>
+                <input type="text" class="form-control" id="inputNewItem">
+                <p id="sth">Get this</p>
+                <input type="submit" id="btnSubmit" name="button">
+            </div>
+        </div>
+    </div>
