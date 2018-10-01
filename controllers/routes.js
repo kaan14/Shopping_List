@@ -25,6 +25,10 @@ router.get("/mylist", function (req, res) {
 });
 
 
+
+
+/*=============POST========================================= */
+
 router.post("/api/newTask", function(req, res){
     list_DB.create(req.body.task, function(data){
 
@@ -33,16 +37,12 @@ router.post("/api/newTask", function(req, res){
 }); 
 
 
-/*=============POST========================================= */
-router.post("/api/newitem", function (req, res) {
-    console.log("in the post"); 
-    console.log(req.body);
-    //newItem should be coming from frontend code Ajax passed data
-    list_DB.create(["item"], [req.body.newItem], function (result) {
-        res.json({ id: result.InsertID });
-    })
+router.put("/api/list/:id", function(req, res){
 
-});
+    var status = "id" + req.body.id; 
+    list_DB.update({completed: req.body.completed })
+
+}); 
 
 // /*=============UPDATE========================================= */
 // router.put("/api/list/:id", function (req, res) {

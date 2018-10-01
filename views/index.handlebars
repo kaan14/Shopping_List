@@ -17,16 +17,31 @@
                 <li>{{this.item}}
 
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" {{bindAttr checked="isChecked" }}>
+                        <input class="form-check-input" type="button" value="done" id="done" {{bindAttr checked="isChecked" }}>
                         <label class="form-check-label" for="defaultCheck1">
 
                         </label>
                 </li>
 
                 {{/each}}
+                </ul>
                 </div>
                 <div class="col-sm">
                     <h1>Done</h1>
+            <ul>
+                {{#each done}}
+                <li>{{this.item}}
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="button" value="delete" id="delete" {{bindAttr checked="isChecked" }}>
+                        <label class="form-check-label" for="defaultCheck1">
+                        </label>
+                </li>
+
+                {{/each}}
+                </ul>
+                </div>    
+                
                 </div>
         </div>
         <div class="col-sm">

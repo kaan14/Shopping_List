@@ -20,3 +20,26 @@ $("#btnSubmit").on("click", function(event) {
         }
       );
     });
+
+
+
+$("#done").on("click", function(event){
+  var id = $(this).data("id"); 
+
+  $.ajax("/api/list" + id, {
+    type: "PUT",
+    data: 1
+  }).then(function(){
+    console.log("Task Completed!");
+    location.reload(); 
+  });
+});
+
+
+$("#delete").on("click", function(event){
+
+  var id = $(this).data("id"); 
+  
+
+
+})
