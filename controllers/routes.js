@@ -11,14 +11,14 @@ var router = express.Router();
 
 /*=============GET========================================= */
 router.get("/mylist", function (req, res) {
-    list_DB.all(function (data){
-        console.log(data); 
+    list_DB.all(function(data){
         var db_data = data;
-
+        console.log(db_data); 
+        
         var listObj = {
             willBuy: db_data, 
         }
-        console.log(listObj);
+        //console.log(listObj);
         res.render("index", listObj);
     })
     
