@@ -10,7 +10,7 @@ var list_DB = require("../models/list.js");
 var router = express.Router();
 
 /*=============GET========================================= */
-router.get("/mylist", function (req, res) {
+router.get("/", function (req, res) {
     list_DB.all(function(data){
   
         var completedItem = []; 
